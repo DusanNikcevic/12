@@ -206,7 +206,7 @@ app.post('/login', (req, res) => {
         .catch((e) => {
             res
                 .status(400)
-                .send();
+                .send(e);
         });
 });
 
