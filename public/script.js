@@ -7,10 +7,9 @@ $('document')
                 images
                     .reverse()
                     .forEach((image) => {
+                        console.log(image.location);
                         var absPath = image.location;
-                        var pathArr = absPath.split('/');
-                        var relPath = pathArr[2];
-                        $('#image-form').append(`<img src='/images/${relPath}'></img>`);
+                        $('#image-form').append(`<img src='/${absPath}'></img>`);
                         $('#image-form').append(`<p>${image.title}</p>`);
                         $('#image-form').append(`<p>${image.description}</p>`);
                         $('#image-form').append(`<form method="delete" action="#" onSubmit="deleteImage('${image._id}')">
