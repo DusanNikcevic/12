@@ -59,7 +59,6 @@ app.post('/upload', (req, res) => {
         }
     }).single('userFile');
     upload(req, res, function (err) {
-        res.redirect('/imageUpload');
 
         var image = new Image({name: req.file.filename, location: req.file.path, title: req.body.title, description: req.body.description});
 
@@ -71,6 +70,8 @@ app.post('/upload', (req, res) => {
             .catch((e) => {
                 console.log('db failed', e);
             });
+
+        res.redirect('/imageUpload');
     });
 
 });
