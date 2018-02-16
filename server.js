@@ -60,6 +60,9 @@ app.post('/upload', (req, res) => {
     }).single('userFile');
     upload(req, res, function (err) {
 
+        console.log(req);
+        console.log(req.file);
+
         var image = new Image({name: req.file.filename, location: req.file.path, title: req.body.title, description: req.body.description});
 
         image
