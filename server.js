@@ -65,7 +65,7 @@ app.post('/upload', (req, res) => {
 
         res.redirect('/imageUpload');
         var image = new Image({name: req.file.filename, location: req.file.path, title: req.body.title, description: req.body.description});
-
+        //
         image
             .save()
             .then(() => {
