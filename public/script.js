@@ -9,8 +9,8 @@ $('document')
                     .forEach((image) => {
                         console.log(image.location);
                         var absPath = image.location;
-                        var relPath = absPath.split('\\');
-                        var realPath = relPath[1] + '\\' + relPath[2];
+                        var relPath = absPath.split('/');
+                        var realPath = relPath[1] + '/' + relPath[2];
                         $('#image-form').append(`<img src='/${realPath}'></img>`);
                         $('#image-form').append(`<p>${image.title}</p>`);
                         $('#image-form').append(`<p>${image.description}</p>`);
