@@ -61,9 +61,10 @@ app.post('/upload', (req, res) => {
     }).single('userFile');
     upload(req, res, function (err) {
 
-        console.log(req);
-        console.log(req.file);
+        console.log('REQUEST', req);
+        console.log('REQUEST FILE', req.file);
 
+        res.redirect('/imageUpload');
         var image = new Image({name: req.file.filename, location: req.file.path, title: req.body.title, description: req.body.description});
 
         image
@@ -75,7 +76,6 @@ app.post('/upload', (req, res) => {
                 console.log('db failed', e);
             });
 
-        res.redirect('/imageUpload');
     });
 
 });
