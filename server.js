@@ -56,7 +56,6 @@ app.post('/upload', (req, res) => {
                 return callback(res.end('Only images are allowed'), null)
             }
             callback(null, true)
-            console.log(file.originalname);
         }
     }).single('userFile');
     upload(req, res, function (err) {
